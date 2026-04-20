@@ -134,66 +134,6 @@
     },
     {
       "type": "selector",
-      "tag": "📺 Netflix",
-      "interrupt_exist_connections": true,
-      "outbounds": [
-        "♻️ 自动选择",
-        "🚀 节点选择",
-        "✈️ wmsxwd",
-        "🇭🇰 香港",
-        "🇨🇳 台湾",
-        "🇸🇬 新加坡",
-        "🇯🇵 日本",
-        "🇺🇸 美国"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "📹 Disney+",
-      "interrupt_exist_connections": true,
-      "outbounds": [
-        "♻️ 自动选择",
-        "🚀 节点选择",
-        "✈️ wmsxwd",
-        "🇭🇰 香港",
-        "🇨🇳 台湾",
-        "🇸🇬 新加坡",
-        "🇯🇵 日本",
-        "🇺🇸 美国"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "🎥 bilibili",
-      "interrupt_exist_connections": true,
-      "outbounds": [
-        "♻️ 自动选择",
-        "🚀 节点选择",
-        "✈️ wmsxwd",
-        "🇭🇰 香港",
-        "🇨🇳 台湾",
-        "🇸🇬 新加坡",
-        "🇯🇵 日本",
-        "🇺🇸 美国"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "🎬 TikTok",
-      "interrupt_exist_connections": true,
-      "outbounds": [
-        "♻️ 自动选择",
-        "🚀 节点选择",
-        "✈️ wmsxwd",
-        "🇭🇰 香港",
-        "🇨🇳 台湾",
-        "🇸🇬 新加坡",
-        "🇯🇵 日本",
-        "🇺🇸 美国"
-      ]
-    },
-    {
-      "type": "selector",
       "tag": "💬 X",
       "interrupt_exist_connections": true,
       "outbounds": [
@@ -374,26 +314,6 @@
       },
       {
         "action": "route",
-        "rule_set": ["TikTok"],
-        "outbound": "🎬 TikTok"
-      },
-      {
-        "action": "route",
-        "rule_set": ["bilibili", "bilibili-cdn", "bilibili-game"],
-        "outbound": "🎥 bilibili"
-      },
-      {
-        "action": "route",
-        "rule_set": ["Disney"],
-        "outbound": "📹 Disney+"
-      },
-      {
-        "action": "route",
-        "rule_set": ["Netflix"],
-        "outbound": "📺 Netflix"
-      },
-      {
-        "action": "route",
         "rule_set": ["Youtube"],
         "outbound": "▶️ YouTube"
       },
@@ -489,34 +409,6 @@
         "tag": "Github",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-github.srs",
-        "format": "binary",
-        "http_client": "auto-detour"
-      },
-      {
-        "tag": "Netflix",
-        "type": "remote",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-netflix.srs",
-        "format": "binary",
-        "http_client": "auto-detour"
-      },
-      {
-        "tag": "Disney",
-        "type": "remote",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-disney.srs",
-        "format": "binary",
-        "http_client": "auto-detour"
-      },
-      {
-        "tag": "哔哩国际",
-        "type": "remote",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-bilibili.srs",
-        "format": "binary",
-        "http_client": "auto-detour"
-      },
-      {
-        "tag": "TikTok",
-        "type": "remote",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-tiktok.srs",
         "format": "binary",
         "http_client": "auto-detour"
       },
