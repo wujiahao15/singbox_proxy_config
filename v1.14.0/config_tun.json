@@ -56,6 +56,13 @@
   ],
   "outbounds": [
     {
+      "type": "socks",
+      "tag": "✈️ wmsxwd",
+      "server": "127.0.0.1",
+      "server_port": 6789,
+      "version": "5"
+    },
+    {
       "type": "urltest",
       "tag": "♻️ 自动选择",
       "interrupt_exist_connections": true,
@@ -65,7 +72,7 @@
       "type": "selector",
       "tag": "🚀 节点选择",
       "interrupt_exist_connections": true,
-      "outbounds": ["♻️ 自动选择", "🎯 全球直连"]
+      "outbounds": ["♻️ 自动选择", "🎯 全球直连", "✈️ wmsxwd"]
     },
     {
       "type": "selector",
@@ -105,6 +112,7 @@
         "🎯 全球直连",
         "🚀 节点选择",
         "♻️ 自动选择",
+        "✈️ wmsxwd",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -119,6 +127,7 @@
       "outbounds": [
         "♻️ 自动选择",
         "🚀 节点选择",
+        "✈️ wmsxwd",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -133,62 +142,7 @@
       "outbounds": [
         "♻️ 自动选择",
         "🚀 节点选择",
-        "🇭🇰 香港",
-        "🇨🇳 台湾",
-        "🇸🇬 新加坡",
-        "🇯🇵 日本",
-        "🇺🇸 美国"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "📺 Netflix",
-      "interrupt_exist_connections": true,
-      "outbounds": [
-        "♻️ 自动选择",
-        "🚀 节点选择",
-        "🇭🇰 香港",
-        "🇨🇳 台湾",
-        "🇸🇬 新加坡",
-        "🇯🇵 日本",
-        "🇺🇸 美国"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "📹 Disney+",
-      "interrupt_exist_connections": true,
-      "outbounds": [
-        "♻️ 自动选择",
-        "🚀 节点选择",
-        "🇭🇰 香港",
-        "🇨🇳 台湾",
-        "🇸🇬 新加坡",
-        "🇯🇵 日本",
-        "🇺🇸 美国"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "🎥 bilibili",
-      "interrupt_exist_connections": true,
-      "outbounds": [
-        "♻️ 自动选择",
-        "🚀 节点选择",
-        "🇭🇰 香港",
-        "🇨🇳 台湾",
-        "🇸🇬 新加坡",
-        "🇯🇵 日本",
-        "🇺🇸 美国"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "🎬 TikTok",
-      "interrupt_exist_connections": true,
-      "outbounds": [
-        "♻️ 自动选择",
-        "🚀 节点选择",
+        "✈️ wmsxwd",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -203,6 +157,7 @@
       "outbounds": [
         "♻️ 自动选择",
         "🚀 节点选择",
+        "✈️ wmsxwd",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -217,6 +172,7 @@
       "outbounds": [
         "♻️ 自动选择",
         "🚀 节点选择",
+        "✈️ wmsxwd",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -231,6 +187,7 @@
       "outbounds": [
         "♻️ 自动选择",
         "🚀 节点选择",
+        "✈️ wmsxwd",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -245,6 +202,7 @@
       "outbounds": [
         "🚀 节点选择",
         "♻️ 自动选择",
+        "✈️ wmsxwd",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -259,6 +217,7 @@
       "outbounds": [
         "♻️ 自动选择",
         "🚀 节点选择",
+        "✈️ wmsxwd",
         "🎯 全球直连",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -279,6 +238,7 @@
         "🚀 节点选择",
         "🎯 全球直连",
         "♻️ 自动选择",
+        "✈️ wmsxwd",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -290,7 +250,13 @@
       "type": "selector",
       "tag": "GLOBAL",
       "interrupt_exist_connections": true,
-      "outbounds": ["♻️ 自动选择", "🚀 节点选择", "🎯 全球直连", "🐟 漏网之鱼"]
+      "outbounds": [
+        "♻️ 自动选择",
+        "🚀 节点选择",
+        "🎯 全球直连",
+        "🐟 漏网之鱼",
+        "✈️ wmsxwd"
+      ]
     }
   ],
   "http_clients": [
@@ -351,7 +317,7 @@
       },
       {
         "action": "route",
-        "rule_set": ["Telegram", "Telegram_IP"],
+        "rule_set": ["Telegram"],
         "outbound": "✈️ Telegram"
       },
       {
@@ -363,26 +329,6 @@
         "action": "route",
         "rule_set": ["X"],
         "outbound": "💬 X"
-      },
-      {
-        "action": "route",
-        "rule_set": ["TikTok"],
-        "outbound": "🎬 TikTok"
-      },
-      {
-        "action": "route",
-        "rule_set": ["bilibili", "bilibili-cdn", "bilibili-game"],
-        "outbound": "🎥 bilibili"
-      },
-      {
-        "action": "route",
-        "rule_set": ["Disney"],
-        "outbound": "📹 Disney+"
-      },
-      {
-        "action": "route",
-        "rule_set": ["Netflix"],
-        "outbound": "📺 Netflix"
       },
       {
         "action": "route",
@@ -485,34 +431,6 @@
         "http_client": "auto-detour"
       },
       {
-        "tag": "Netflix",
-        "type": "remote",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-netflix.srs",
-        "format": "binary",
-        "http_client": "auto-detour"
-      },
-      {
-        "tag": "Disney",
-        "type": "remote",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-disney.srs",
-        "format": "binary",
-        "http_client": "auto-detour"
-      },
-      {
-        "tag": "哔哩国际",
-        "type": "remote",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-bilibili.srs",
-        "format": "binary",
-        "http_client": "auto-detour"
-      },
-      {
-        "tag": "TikTok",
-        "type": "remote",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-tiktok.srs",
-        "format": "binary",
-        "http_client": "auto-detour"
-      },
-      {
         "tag": "Telegram",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-telegram.srs",
@@ -565,6 +483,13 @@
         "tag": "GeoSite-CN",
         "type": "remote",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+        "format": "binary",
+        "http_client": "auto-detour"
+      },
+      {
+        "tag": "GeoLocation-CN",
+        "type": "remote",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-cn.srs",
         "format": "binary",
         "http_client": "auto-detour"
       },
