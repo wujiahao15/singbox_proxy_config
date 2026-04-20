@@ -39,10 +39,7 @@
       "type": "tun",
       "tag": "tun-in",
       "interface_name": "",
-      "address": [
-        "172.18.0.1/30",
-        "fdfe:dcba:9876::1/126"
-      ],
+      "address": ["172.18.0.1/30", "fdfe:dcba:9876::1/126"],
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
@@ -68,7 +65,7 @@
       "type": "selector",
       "tag": "🚀 节点选择",
       "interrupt_exist_connections": true,
-      "outbounds": []
+      "outbounds": ["♻️ 自动选择", "🎯 全球直连"]
     },
     {
       "type": "selector",
@@ -106,6 +103,7 @@
       "interrupt_exist_connections": true,
       "outbounds": [
         "🎯 全球直连",
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -119,6 +117,7 @@
       "tag": "🌐 Google",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -132,6 +131,7 @@
       "tag": "▶️ YouTube",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -145,6 +145,7 @@
       "tag": "📺 Netflix",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -158,6 +159,7 @@
       "tag": "📹 Disney+",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -171,6 +173,7 @@
       "tag": "🎥 bilibili",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -184,6 +187,7 @@
       "tag": "🎬 TikTok",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -197,6 +201,7 @@
       "tag": "💬 X",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -210,6 +215,7 @@
       "tag": "🧑‍🤝‍🧑 FaceBook",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -223,6 +229,7 @@
       "tag": "✈️ Telegram",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -236,6 +243,7 @@
       "tag": "🤖 AI",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -249,6 +257,7 @@
       "tag": "📦 Github",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🎯 全球直连",
         "🇭🇰 香港",
@@ -267,6 +276,7 @@
       "tag": "🐟 漏网之鱼",
       "interrupt_exist_connections": true,
       "outbounds": [
+        "♻️ 自动选择",
         "🚀 节点选择",
         "🎯 全球直连",
         "🇭🇰 香港",
@@ -280,7 +290,7 @@
       "type": "selector",
       "tag": "GLOBAL",
       "interrupt_exist_connections": true,
-      "outbounds": ["🚀 节点选择", "🎯 全球直连", "🐟 漏网之鱼"]
+      "outbounds": ["♻️ 自动选择", "🚀 节点选择", "🎯 全球直连", "🐟 漏网之鱼"]
     }
   ],
   "route": {
