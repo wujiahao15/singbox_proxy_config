@@ -59,6 +59,12 @@
   ],
   "outbounds": [
     {
+      "type": "urltest",
+      "tag": "♻️ 自动选择",
+      "interrupt_exist_connections": true,
+      "outbounds": []
+    },
+    {
       "type": "selector",
       "tag": "🚀 节点选择",
       "interrupt_exist_connections": true,
