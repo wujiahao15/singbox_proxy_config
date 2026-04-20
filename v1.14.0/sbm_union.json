@@ -359,7 +359,7 @@
       },
       {
         "action": "route",
-        "rule_set": ["Telegram", "Telegram_IP"],
+        "rule_set": ["Telegram"],
         "outbound": "✈️ Telegram"
       },
       {
