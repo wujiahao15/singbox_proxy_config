@@ -10,7 +10,7 @@
       "external_controller": "127.0.0.1:20123",
       "external_ui": "",
       "external_ui_download_url": "",
-      "external_ui_download_detour": "🚀 节点选择",
+      "external_ui_download_detour": "♻️ 自动选择",
       "secret": "40cf80546ed45fb9fc0a15fe0bcf3807ad0b4bb6453e25e784ee449cc4789ff4",
       "default_mode": "rule",
       "access_control_allow_origin": ["*"],
@@ -103,8 +103,8 @@
       "interrupt_exist_connections": true,
       "outbounds": [
         "🎯 全球直连",
-        "♻️ 自动选择",
         "🚀 节点选择",
+        "♻️ 自动选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -243,8 +243,8 @@
       "tag": "🤖 AI",
       "interrupt_exist_connections": true,
       "outbounds": [
-        "♻️ 自动选择",
         "🚀 节点选择",
+        "♻️ 自动选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -276,9 +276,9 @@
       "tag": "🐟 漏网之鱼",
       "interrupt_exist_connections": true,
       "outbounds": [
-        "♻️ 自动选择",
         "🚀 节点选择",
         "🎯 全球直连",
+        "♻️ 自动选择",
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
@@ -293,8 +293,52 @@
       "outbounds": ["♻️ 自动选择", "🚀 节点选择", "🎯 全球直连", "🐟 漏网之鱼"]
     }
   ],
+  "http_clients": [
+    {
+      "tag": "auto-detour",
+      "detour": "♻️ 自动选择"
+    }
+  ],
   "route": {
     "rules": [
+      {
+        "action": "sniff",
+        "inbound": "tun-in"
+      },
+      {
+        "action": "hijack-dns",
+        "protocol": "dns"
+      },
+      {
+        "action": "reject",
+        "rule_set": ["Category-Ads"],
+        "method": ""
+      },
+      {
+        "action": "reject",
+        "protocol": "quic",
+        "method": ""
+      },
+      {
+        "action": "route",
+        "rule_set": ["GeoSite-Private"],
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "action": "route",
+        "rule_set": ["GeoIP-Private"],
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "action": "route",
+        "clash_mode": "direct",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "action": "route",
+        "clash_mode": "global",
+        "outbound": "GLOBAL"
+      },
       {
         "action": "route",
         "rule_set": ["Github"],
@@ -307,7 +351,7 @@
       },
       {
         "action": "route",
-        "rule_set": ["Telegram", "Telegram_ASN"],
+        "rule_set": ["Telegram", "Telegram_IP"],
         "outbound": "✈️ Telegram"
       },
       {
@@ -327,7 +371,7 @@
       },
       {
         "action": "route",
-        "rule_set": ["哔哩国际"],
+        "rule_set": ["bilibili", "bilibili-cdn", "bilibili-game"],
         "outbound": "🎥 bilibili"
       },
       {
@@ -355,55 +399,14 @@
         "rule_set": ["Bing", "Bing-CN"],
         "outbound": "🔍 Bing"
       },
-      // {
-      //   "action": "sniff",
-      //   "inbound": "tun-in"
-      // },
-      {
-        "domain_suffix": ["pentaplus.cn"],
-        "outbound": "🐟 漏网之鱼"
-      },
-      {
-        "domain_suffix": ["wujiahao.space"],
-        "outbound": "🎯 全球直连"
-      },
-      {
-        "action": "hijack-dns",
-        "protocol": "dns"
-      },
       {
         "action": "route",
-        "clash_mode": "direct",
-        "outbound": "🎯 全球直连"
-      },
-      {
-        "action": "route",
-        "clash_mode": "global",
-        "outbound": "GLOBAL"
-      },
-      {
-        "action": "reject",
-        "protocol": "quic",
-        "method": ""
-      },
-      {
-        "action": "reject",
-        "rule_set": ["Category-Ads"],
-        "method": ""
-      },
-      {
-        "action": "route",
-        "rule_set": ["GeoSite-Private"],
+        "rule_set": ["GeoLocation-CN"],
         "outbound": "🎯 全球直连"
       },
       {
         "action": "route",
         "rule_set": ["GeoSite-CN"],
-        "outbound": "🎯 全球直连"
-      },
-      {
-        "action": "route",
-        "rule_set": ["GeoIP-Private"],
         "outbound": "🎯 全球直连"
       },
       {
@@ -423,154 +426,154 @@
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-openai.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Claude",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-anthropic.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Gemini",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-google-gemini.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Bing",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-bing.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Bing-CN",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-bing@cn.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Youtube",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-youtube.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "FaceBook",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-facebook.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "X",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-x.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Github",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-github.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Netflix",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-netflix.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Disney",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-disney.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "哔哩国际",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-bilibili.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "TikTok",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-tiktok.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Telegram",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-telegram.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Telegram_ASN",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/yyhhyyyyyy/sing-box-ruleset/main/ip/telegram_asn.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Google",
         "type": "remote",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/refs/heads/rule-set/geosite-google.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "Category-Ads",
         "type": "remote",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "GeoIP-Private",
         "type": "remote",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "GeoSite-Private",
         "type": "remote",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "GeoIP-CN",
         "type": "remote",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "GeoSite-CN",
         "type": "remote",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       },
       {
         "tag": "GeoLocation-!CN",
         "type": "remote",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
         "format": "binary",
-        "download_detour": "🚀 节点选择"
+        "http_client": "auto-detour"
       }
     ],
     "auto_detect_interface": true,
