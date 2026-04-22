@@ -286,6 +286,14 @@
         "method": ""
       },
       {
+        "domain_suffix": ["pentaplus.cn"],
+        "outbound": "🐟 漏网之鱼"
+      },
+      {
+        "domain_suffix": ["wujiahao.space"],
+        "outbound": "🎯 全球直连"
+      },
+      {
         "action": "route",
         "rule_set": ["GeoSite-Private"],
         "outbound": "🎯 全球直连"
