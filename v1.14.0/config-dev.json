@@ -71,7 +71,8 @@
         "🇨🇳 台湾",
         "🇸🇬 新加坡",
         "🇯🇵 日本",
-        "🇺🇸 美国"
+        "🇺🇸 美国",
+        "🇺🇳 其他地区"
       ]
     },
     {
@@ -284,12 +285,9 @@
         "protocol": "quic"
       },
       {
+        "action": "route",
         "domain_suffix": ["pentaplus.cn"],
         "outbound": "🐟 漏网之鱼"
-      },
-      {
-        "domain_suffix": ["wujiahao.space"],
-        "outbound": "🎯 全球直连"
       },
       {
         "action": "route",
@@ -553,6 +551,11 @@
       {
         "action": "route",
         "clash_mode": "global",
+        "server": "Remote-DNS"
+      },
+      {
+        "action": "route",
+        "domain_suffix": ["pentaplus.cn"],
         "server": "Remote-DNS"
       },
       {
