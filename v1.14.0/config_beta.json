@@ -231,6 +231,11 @@
       },
       {
         "action": "route",
+        "domain_suffix": ["wujiahao.space"],
+        "outbound": "Direct"
+      },
+      {
+        "action": "route",
         "rule_set": ["GeoSite-Private"],
         "outbound": "Direct"
       },
@@ -478,6 +483,11 @@
         "action": "route",
         "domain_suffix": ["pentaplus.cn"],
         "server": "Remote-DNS"
+      },
+      {
+        "action": "route",
+        "domain_suffix": ["wujiahao.space"],
+        "server": "Local-DNS"
       },
       {
         "action": "route",
